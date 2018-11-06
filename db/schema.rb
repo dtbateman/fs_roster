@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181027231306) do
+ActiveRecord::Schema.define(version: 20181102184952) do
+
+  create_table "registration_models", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "registrations", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "gender"
+    t.string   "email"
+    t.string   "nationality"
+    t.string   "religion"
+    t.date     "birthdate"
+    t.string   "phone"
+    t.string   "streetname"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.boolean  "need_ride"
+    t.string   "has_spouse"
+    t.string   "spouse_name"
+    t.string   "english_level"
+    t.text     "expectations"
+    t.string   "length_of_stay"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false

@@ -1,0 +1,55 @@
+<%= form_for @registration do |f| %>
+			       
+
+			              <%= f.label :first_name, 'First:' %>
+			              <%= f.text_field :first_name %>
+			              <%= f.label :last_name, 'Last:' %>
+			              <%= f.text_field :last_name %>
+			              <%= f.label :sex, 'Sex:' %>
+			              <%= f.select :sex, ['Male'], ['Female'] %>
+			              <%= f.label :email, 'Email:' %>
+			              <%= f.email :email %>
+			              <%= f.label :nationality, 'Nationality:' %>
+			              <%= f.text_field :nationality %>
+			              <%= f.label :religion, 'Religion:' %>
+			              <%= f.text_field :religion  %>
+			              <%= f.label :birthday, 'Birthdate:' %>
+			              <%= f.date :birthday %>
+			              <%= f.label :phone, 'Phone:' %>
+			              <%= f.text_field :phone %>
+	           
+			          
+			           <%= f.label :street, 'Street Number & Name:' %>
+		               <%= f.text_field :street %>
+		               <%= f.label :city, 'City:' %>
+		               <%= f.text_field :city %>
+		               <%= f.label :state, 'State:' %>
+		               <%= f.text_field :state %>
+		               <%= f.label :zip, 'Zip:' %>
+		               <%= f.text_field :zip %>
+			           <%= f.label :transport, 'Do you need help getting to the church building?' %>
+			           <%= f.boolean :transport %> 
+			           
+			           <%= f.label :marital, 'Marital Status:' %>
+			           <%= f.select :marital, ['married'], ['single'] %>
+			           <%= f.label :spouse_name, "If married, spouse's name:" %>
+			           <%= f.text_field :spouse_name %>
+			           <%= f.label :level, 'English Level:' %>
+			           <%= f.select :level, ['Low'], ['Medium Low'], ['Medium'], ['Medium High'], ['High']  %>
+			           <%= f.label :expectations, 'What are your expectations for the program?:' %>
+			           <%= f.textarea :expectations %>
+			           <%= f.label :length, 'How long will you be in Nashville:?' %>
+			           <%= f.select :length, ['Less than 1 Year'], ['1 Year'], ['1-2 Years'], ['2-3 Years'], ['3+ Years'] %>
+			           <%= f.label :exact_length, 'Please specify the exact length of time you will be in Nashville:' %>
+			           <%= f.textarea :exact_length %>
+
+
+<%= f.submit 'Register' %>
+
+			 
+
+			      
+			        
+
+
+<% end %>
