@@ -3,7 +3,7 @@ class CreateRegistrations < ActiveRecord::Migration[5.0]
     create_table :registrations do |t|
       t.string :first_name
       t.string :last_name
-      t.string :gender
+      t.string :sex
       t.string :email
       t.string :nationality
       t.string :religion

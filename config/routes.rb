@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'registrations/new'
 
-  get 'registrations/create' => 'registrations#create'
+  get 'registrations/create' 
 
   get 'registrations/edit'
 
@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   get 'registration/index'
 
- get '/signup', to: 'register#index'
+ get '/signup', to: 'registrations#create'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
