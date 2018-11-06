@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'registrations/new'
+resources :registrations
+
+  get '/registrations/new', to: 'registrations#new'
 
   get 'registrations/create' 
 
@@ -10,18 +12,6 @@ Rails.application.routes.draw do
   get 'registrations/show'
 
   get 'registrations/index'
-
-  get 'registration/new'
-
-  get 'registration/create'
-
-  get 'registration/edit'
-
-  get 'registration/update'
-
-  get 'registration/show'
-
-  get 'registration/index'
 
  get '/signup', to: 'registrations#create'
 

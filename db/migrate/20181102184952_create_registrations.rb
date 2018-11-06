@@ -3,7 +3,7 @@ class CreateRegistrations < ActiveRecord::Migration[5.0]
     create_table :registrations do |t|
       t.string :first_name
       t.string :last_name
-      t.string :sex
+      t.string :gender
       t.string :email
       t.string :nationality
       t.string :religion
@@ -19,6 +19,7 @@ class CreateRegistrations < ActiveRecord::Migration[5.0]
       t.string :english_level
       t.text :expectations
       t.string :length_of_stay
+      t.text :exact_length
 
       t.timestamps
     end
