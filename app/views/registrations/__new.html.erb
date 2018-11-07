@@ -1,0 +1,121 @@
+      <form action="fsform.html" method="post">
+        <header>
+          <%= image_tag "fshillsboro.jpg", class: "logo" %>
+          <h1>FriendSpeak Sign-up Form</h1>
+          <h3>Questions about Friendspeak? <br>Email us at <a href="mailto:friendspeak@hillsboro.org">friendspeak@hillsboro.org</a>!</h3>
+        </header>
+
+        <fieldset>
+          <!-- <legend>Your information</legend> -->
+          <span class="input_head">Name:</span>
+          <br>
+          <br>
+
+              <label for="first_name">First:</label>
+              <input type="text" id="first_name" name="reader_first_name" required>
+              <br>
+
+              <label for="last_name">Last:</label>
+              <input type="text" id="last_name" name="reader_last_name" required>
+
+              <label class="input_head" for="">Sex:</label>
+              <select name="sex">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                   <br>
+                   <br>
+             <label class="input_head" for="mail">E-mail Address:</label>
+               <input type="email" id="mail" name="reader_mail">
+           </div>
+           <div class-"">
+               <label class="input_head" for="nationality">Nationality:</label>
+               <input type="text" id="nationality" name="nationality">
+           </div>
+           <div class-"">
+               <label class="input_head" for="religion">Religion:</label>
+               <input type="text" id="religion" name="religion">
+           </div>
+           <div class-"">
+               <label class="input_head" for="birthday">Birthdate:</label>
+               <input type="date" id="birthday" name="birthdate">
+           </div>
+           <div class-"">
+               <label class="input_head" for="phone">Phone:</label>
+               <input type="tel" id="phone" name="phone">
+           </div>
+           <div class-"">
+           <span class="input_head">Address:</span>
+           <br>
+           <br>
+           <label for="street_address">Street Number & Name:</label>
+           <input type="text" name="street_address" value="">
+           <br>
+           <label for="city">City:</label>
+           <input type="text" name="city" value="">
+           <label for="state">State:</label>
+           <input type="text" name="state" value="">
+           <label for="zip">Zip:</label>
+           <input type="text" name="zip" value="">
+ <label for="transport">Do you need help getting to the church building?</label>
+           <select name="transport">
+                 <option value="bus">Yes</option>
+                 <option value="car">No</option>
+               </select required>
+
+           </div>
+           <div class="">
+             <label class="input_head" for="marital">Marital Status:</label>
+             <select name="marital">
+                   <option value="married">Married</option>
+                   <option value="single">Single</option>
+                 </select required>
+           </div>
+
+           <br>
+           <div class-"">
+               <label for="spouse_name">If married, spouse's name:</label>
+               <input type="text" id="spouse_name" name="spouse_name">
+           </div>
+           <br>
+           <div class="">
+             <label class="input_head" for="">English Level:</label>
+             <select name="level">
+                <option value="low">Low</option>
+                <option value="mid-low">Medium Low</option>
+                <option value="mid">Medium</option>
+                <option value="mid-high">Medium High</option>
+                <option value="high">High</option>
+              </select required>
+<br>
+           </div>
+
+           <div class-"">
+               <label for="expect">What are your expectations for the program?</label>
+               <br>
+               <textarea type="text" id="expect" name="expect" required></textarea>
+           </div>
+           <div class-"">
+               <label for="length">How long will you be in Nashville?</label>
+               <br>
+                              <select name="length">
+                  <option value="">Less than 1 Year</option>
+                  <option value="months">1 Year</option>
+                  <option value="weeks">1-2 Years</option>
+                  <option value="days">2-3 Years</option>
+                  <option value="days">3+ Years</option>
+
+                </select required>
+               <textarea type="text" id="length" name="length" placeholder="Please specify the exact length of time you will be in Nashville" required></textarea>
+           </div>
+
+          </fieldset>
+
+ <button type="submit">Register</button>
+
+
+
+      </form>
+
+    </body>
+</html>
