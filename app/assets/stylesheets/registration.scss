@@ -71,9 +71,10 @@ select {
   border-radius: 2px;
 }
 
-button {
+input[type='submit'] {
   padding: 19px 39px 18px 39px;
   color: #FFF;
+  cursor: pointer;
   background-color: #6e8878;
   font-size: 18px;
   text-align: center;

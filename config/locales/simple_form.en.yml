@@ -10,15 +10,30 @@ en:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please review the problems below:"
-    # Examples
-    # labels:
-    #   defaults:
-    #     password: 'Password'
-    #   user:
-    #     new:
-    #       email: 'E-mail to sign in.'
-    #     edit:
-    #       email: 'E-mail.'
+    labels:
+      defaults:
+        first_name: "First Name"
+        last_name: "Last Name"
+        gender: "Are you Male or Female?"
+        nationality: "What is your nationality?"
+        religion: "What is your religious affiliation?"
+        birthdate: "What is your birthday?"
+        phone: "What is your primary phone number?"
+        street: "Street Address"
+        city: "City"
+        postal_code: "ZIP Code"
+        has_transportation: "Do you have transportation?"
+        marital_status: "What is your marital status?"
+        spouse_name: "If yes, what is your spouse's name?"
+        english_fluency: "How fluent in English are you?"
+        expectations: "What do you hope to get out of FriendSpeak?"
+        anticipated_residency_duration: "How long will you be in Nashville?"
+        password: 'Password'
+      # user:
+      #   new:
+      #     email: 'E-mail to sign in.'
+      #   edit:
+      #     email: 'E-mail.'
     # hints:
     #   defaults:
     #     username: 'User name to sign in.'
