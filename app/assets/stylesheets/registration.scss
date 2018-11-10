@@ -127,22 +127,19 @@ font-weight: bold;
 
 }
 
-
-
 .logo {
   max-width: 100%;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-
-
-
 }
 
 @media screen and (min-width: 480px) {
-
   form {
     max-width: 480px;
   }
+}
 
+.field_with_errors .error {
+  color: red;
 }
