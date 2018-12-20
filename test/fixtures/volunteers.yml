@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  gender: MyString
+  email: MyString
+  birthdate: 2018-12-20
+  phone: MyString
+  streetname: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  baptism_date: 2018-12-20
+  baptism_importance: 
+  christian_story: 
+  questions: 
+
+two:
+  first_name: MyString
+  last_name: MyString
+  gender: MyString
+  email: MyString
+  birthdate: 2018-12-20
+  phone: MyString
+  streetname: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  baptism_date: 2018-12-20
+  baptism_importance: 
+  christian_story: 
+  questions: 

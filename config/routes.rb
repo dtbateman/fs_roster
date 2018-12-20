@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'volunteers/new'
+
+  get 'volunteers/create'
+
+  get 'volunteers/edit'
+
+  get 'volunteers/update'
+
+  get 'volunteers/show'
+
+  get 'volunteers/index'
+
 resources :registrations
 
   get 'registrations/new'
