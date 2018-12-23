@@ -4,7 +4,6 @@ class RegistrationsController < ApplicationController
   end
 
   def create
-    @registration= Registration.new
   end
 
   def edit

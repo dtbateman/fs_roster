@@ -5,7 +5,6 @@ class VolunteersController < ApplicationController
   end
 
   def create
-    @volunteer= Volunteer.new
 
   end
 

@@ -8,7 +8,7 @@
     </head>
     
 
-			<%= form_for @registration do |f| %>
+			<%= form_for @volunteer do |f| %>
 				<body> 
 			    	<header>
 						<div> 
@@ -28,10 +28,6 @@
 
 			              <%= f.label :email, 'Email:' %>
 			              <%= f.text_field :email %>
-			              <%= f.label :nationality, 'Nationality:' %>
-			              <%= f.text_field :nationality %>
-			              <%= f.label :religion, 'Religion:' %>
-			              <%= f.text_field :religion  %>
 			              <%= f.label :birthdate, 'Birthdate:' %>
 			              <%= f.text_field :birthdate %>
 			              <%= f.label :phone, 'Phone:' %>
@@ -46,20 +42,16 @@
 		               <%= f.text_field :state %>
 		               <%= f.label :zip, 'Zip:' %>
 		               <%= f.text_field :zip %>
-			           <%= f.label :need_ride, 'Do you need help getting to the church building?' %>
-			           <%= f.select :need_ride, ['Yes','No'] %> 
-			           
-			           <%= f.label :has_spouse, 'Marital Status:' %>
-			           <%= f.select :has_spouse, ['married', 'single'] %>
-			           <%= f.label :spouse_name, "If married, spouse's name:" %>
-			           <%= f.text_field :spouse_name %>
-			           <%= f.label :english_level, 'English Level:' %>
-			           <%= f.select :english_level, ['Low', 'Medium Low', 'Medium', 'Medium High', 'High']  %>
-			           <%= f.label :expectations, 'What are your expectations for the program?:' %>
-			           <%= f.text_area :expectations %>
-			           <%= f.label :length_of_stay, 'How long will you be in Nashville:?' %>
-			           <%= f.select :length_of_stay, ['Less than 1 Year', '1 Year', '1-2 Years', '2-3 Years', '3+ Years'] %>
 
+			           <%= f.label :baptism_date, 'Date of Baptism:' %>
+		               <%= f.text_field :baptism_date %>
+		               <%= f.label :baptism_importance, 'What role do you feel water immersion/baptism plays in salvation?:' %>
+		               <%= f.text_area :baptism_importance %>
+		               <%= f.label :christian_story, 'Aside from being raised in a Christian home, describe how and why you became a Christian:' %>
+		               <%= f.text_area:christian_story %>
+		               <%= f.label :questions, 'Notes(questions, concerns, comments):' %>
+		               <%= f.text_area :questions %>
+<br>
 
 <%= f.submit 'Register' %>
 

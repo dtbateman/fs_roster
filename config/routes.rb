@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  resources :volunteers
+
   get 'volunteers/new'
 
   get 'volunteers/create'
@@ -10,6 +14,9 @@ Rails.application.routes.draw do
   get 'volunteers/show'
 
   get 'volunteers/index'
+
+  get '/teachers', to: 'volunteers#new'
+
 
 resources :registrations
 
