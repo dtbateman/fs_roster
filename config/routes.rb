@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'volunteers/index'
 
   get '/teachers', to: 'volunteers#new'
+  get '/volunteer', to: 'volunteers#new'
 
 
 resources :registrations

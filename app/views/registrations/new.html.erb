@@ -8,12 +8,12 @@
     </head>
     
 
-			<%= form_for @registration do |f| %>
+			<%= form_for @registration, url: {action: "create"} do |f| %>
 				<body> 
 			    	<header>
 						<div> 
 							<%= image_tag("fshillsboro.jpg", :alt => "friendspeaklogo", :class => 'logo') %>          
-							<h1>FriendSpeak Sign-up Form</h1>
+							<h1>FriendSpeak Reader Sign-up Form</h1>
 					          <h3>Questions about Friendspeak? <br>Email us at <a href="mailto:friendspeak@hillsboro.org">friendspeak@hillsboro.org</a>!</h3>
 				          </div>
 					</header>
