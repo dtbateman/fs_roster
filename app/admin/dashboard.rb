@@ -1,33 +1,40 @@
-ActiveAdmin.register_page "Dashboard" do
-  menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
-
-  content title: proc{ I18n.t("active_admin.dashboard") } do
-    div class: "blank_slate_container", id: "dashboard_default_message" do
-      span class: "blank_slate" do
-        span I18n.t("active_admin.dashboard_welcome.welcome")
-        small I18n.t("active_admin.dashboard_welcome.call_to_action")
-      end
-    end
-
-    # Here is an example of a simple dashboard with columns and panels.
-    #
-    columns do
+ActiveAdmin.register_page "Dashboard" do   
+    content :title => proc{ I18n.t("active_admin.dashboard") } do 
+     columns do
       column do
-        panel "Recent Applicants" do
-          ul do
-            Volunteer.recent(5).map do |volunteer|
-              li link_to(volunteer.first_name, admin_post_path(volunteer))
-            end
+        panel "Recent Student Applicants" do
+          table_for Registration.order("id asc").limit(10) do
+            column("Name") { |registration| registration.first_name + ' ' +registration.last_name }
+            column("Gender")   { |registration| registration.gender }
+            column("E-mail") { |registration| registration.email }
+            column("Phone") { |registration| registration.phone }
+            column("Birthday") { |registration| registration.birthdate }
+            column("Ride needed?") { |registration| registration.need_ride }
+            column("English Level") { |registration| registration.english_level }
+            column("Expecations") { |registration| registration.expectations }
+            column("Length of Stay") { |registration| registration.length_of_stay }
+        
+
+
+          end
+        end
+      end
+       column do
+        panel "Recent Volunteer Applicants" do
+          table_for Volunteer.order("id asc").limit(10) do
+            column("Name") { |volunteer| volunteer.first_name + ' ' +volunteer.last_name }
+            column("Gender")   { |volunteer| volunteer.gender }
+            column("E-mail") { |volunteer| volunteer.email }
+            column("Phone") { |volunteer| volunteer.phone }
+            column("Birthday") { |volunteer| volunteer.birthdate }
+            column("Questions") { |volunteer| volunteer.questions }
+
+
           end
         end
       end
 
-    #   column do
-    #     panel "Info" do
-    #       para "Welcome to ActiveAdmin."
-    #     end
-    #   end
-    # end
-  end # content
-end
-end
+    end   
+end 
+
+ end
