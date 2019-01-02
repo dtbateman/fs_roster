@@ -14,12 +14,8 @@ ActiveAdmin.register_page "Dashboard" do
             column("Expecations") { |registration| registration.expectations }
             column("Length of Stay") { |registration| registration.length_of_stay }
         
-
-
           end
         end
-      end
-       column do
         panel "Recent Volunteer Applicants" do
           table_for Volunteer.order("id asc").limit(10) do
             column("Name") { |volunteer| volunteer.first_name + ' ' +volunteer.last_name }
@@ -33,6 +29,7 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
+       
 
     end   
 end 
