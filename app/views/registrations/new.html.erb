@@ -57,8 +57,10 @@
 			           <%= f.select :english_level, ['Low', 'Medium Low', 'Medium', 'Medium High', 'High']  %>
 			           <%= f.label :expectations, 'What are your expectations for the program?:' %>
 			           <%= f.text_area :expectations %>
-			           <%= f.label :length_of_stay, 'How long will you be in Nashville:?' %>
+			           <%= f.label :length_of_stay, 'About how long will you be in Nashville?:' %>
 			           <%= f.select :length_of_stay, ['Less than 1 Year', '1 Year', '1-2 Years', '2-3 Years', '3+ Years'] %>
+			            <%= f.label :exact_length, 'Please tell us exactly how long you plan to be in Nashville:' %>
+			           <%= f.text_area :exact_length %>
 <br>
 <br>
 
