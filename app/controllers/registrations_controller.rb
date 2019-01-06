@@ -3,13 +3,16 @@ class RegistrationsController < ApplicationController
     @registration= Registration.new
   end
 
-  def create
+    def create
+        @admin= Volunteer.first
+
        @registration = Registration.create(registration_params)
     @registration.save
     if @registration.save
+    flash[:success] = "Successfully Registered!"        
 
-        flash[:notice] = "Successfully Registered!"
-
+            #email notifes admin of new registration
+        NotifyMailer.notify_email(@registration).deliver_now
         redirect_to '/signup'
     end
   end

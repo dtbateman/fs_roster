@@ -3,13 +3,17 @@ class VolunteersController < ApplicationController
     @volunteer= Volunteer.new
   end
 
-  def create
+   def create
+    @admin= Volunteer.first
     @volunteer = Volunteer.create(volunteer_params)
     @volunteer.save
     if @volunteer.save
-              flash[:notice] = "Successfully Registered!"
+            flash[:success] = "Successfully Registered!"        
 
-        redirect_to '/teachers'
+            #email notifes admin of new registration
+        NotifyMailer.notify_email(@volunteer).deliver_now
+
+        redirect_to '/volunteer'
     end
   end
 

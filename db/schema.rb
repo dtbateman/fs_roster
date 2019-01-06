@@ -26,11 +26,6 @@ ActiveRecord::Schema.define(version: 20181220225145) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
-  create_table "registration_models", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "registrations", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -50,6 +45,7 @@ ActiveRecord::Schema.define(version: 20181220225145) do
     t.string   "english_level"
     t.text     "expectations"
     t.string   "length_of_stay"
+    t.text     "exact_length"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
