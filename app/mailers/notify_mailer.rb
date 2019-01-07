@@ -1,6 +1,6 @@
 class NotifyMailer < ApplicationMailer
 
-	default from: "hillsborofriendspeak@gmail.com"
+	default from: "friendspeak@hillsboro.org"
 
 	def notify_email(volunteer)
 	@volunteer= volunteer
