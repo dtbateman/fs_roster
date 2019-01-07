@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+     	<%= stylesheet_link_tag "main" %>  
+    </head>
+    
+
+			<%= form_for @manager, url: {action: "create"} do |f| %>
+				<body> 
+			    	<header>
+						<div> 
+							<%= image_tag("fshillsboro.jpg", :alt => "friendspeaklogo", :class => 'logo') %>          
+							<h1>FriendSpeak Admin Registration</h1>
+					         
+				          </div>
+					</header>
+			       
+						  <%= f.label :email, 'Email:' %>
+			              <%= f.text_field :email %>
+			              <%= f.label :username, 'Username:' %>
+			              <%= f.text_field :username %>
+			              <%= f.label :password_digest, 'Password:' %>
+			              <%= f.text_field :password_digest %>
+			             
+<br>
+<br>
+
+<%= f.submit 'Create Admin User' %>
+
+			 
+
+			      
+			        
+
+
+<% end %>

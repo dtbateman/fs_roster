@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+ 
+  resources :managers
+
+  get 'managers/new'
+
+  get 'managers/create'
+
+  get 'managers/edit'
+
+  get 'managers/update'
+
+  get 'managers/show'
+
+  get 'managers/index'
+
+  get '/manage', to: 'managers#new'
+
+
+  
   ActiveAdmin.routes(self)
 
   resources :volunteers
