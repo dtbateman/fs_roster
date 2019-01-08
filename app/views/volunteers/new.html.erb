@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+     	<%= stylesheet_link_tag "main" %>  
+    </head>
+    
+
+			<%= form_for @volunteer, url: {action: "create"} do |f| %>
+				<body> 
+			    	<header>
+						<div> 
+							<%= image_tag("fshillsboro.jpg", :alt => "friendspeaklogo", :class => 'logo') %>          
+							<h1>FriendSpeak Volunteer Sign-up Form</h1>
+					          <h3>Questions about Friendspeak? <br>Email us at <a href="mailto:friendspeak@hillsboro.org">friendspeak@hillsboro.org</a>!</h3>
+				          </div>
+					</header>
+			       
+
+			              <%= f.label :first_name, 'First:' %>
+			              <%= f.text_field :first_name %>
+			              <%= f.label :last_name, 'Last:' %>
+			              <%= f.text_field :last_name %>
+			              <%= f.label :gender, 'Sex:' %>			             
+			              <%= f.select :gender, ['Male', 'Female'] %>
+
+			              <%= f.label :email, 'Email:' %>
+			              <%= f.text_field :email %>
+			              <%= f.label :birthdate, 'Birthdate:' %>
+			              <%= f.date_field :birthdate %>
+			              <%= f.label :phone, 'Phone:' %>
+			              <%= f.text_field :phone %>
+	           
+			          
+			           <%= f.label :streetname, 'Street Number & Name:' %>
+		               <%= f.text_field :streetname %>
+		               <%= f.label :city, 'City:' %>
+		               <%= f.text_field :city %>
+		               <%= f.label :state, 'State:' %>
+		               <%= f.text_field :state %>
+		               <%= f.label :zip, 'Zip:' %>
+		               <%= f.text_field :zip %>
+
+			           <%= f.label :baptism_date, 'Date of Baptism:' %>
+		               <%= f.date_field :baptism_date %>
+		               <%= f.label :baptism_importance, 'What role do you feel water immersion/baptism plays in salvation?:' %>
+		               <%= f.text_area :baptism_importance %>
+		               <%= f.label :christian_story, 'Aside from being raised in a Christian home, describe how and why you became a Christian:' %>
+		               <%= f.text_area:christian_story %>
+		               <%= f.label :questions, 'Notes(questions, concerns, comments):' %>
+		               <%= f.text_area :questions %>
+<br>
+
+<%= f.submit 'Register' %>
+
+			 
+
+			      
+			        
+
+
+<% end %>

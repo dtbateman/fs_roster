@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+     	<%= stylesheet_link_tag "main" %>  
+    </head>
+    
+
+			<%= form_for @registration, url: {action: "create"} do |f| %>
+				<body> 
+			    	<header>
+						<div> 
+							<%= image_tag("fshillsboro.jpg", :alt => "friendspeaklogo", :class => 'logo') %>          
+							<h1>FriendSpeak Reader Sign-up Form</h1>
+					          <h3>Questions about Friendspeak? <br>Email us at <a href="mailto:friendspeak@hillsboro.org">friendspeak@hillsboro.org</a>!</h3>
+				          </div>
+					</header>
+			       
+
+			              <%= f.label :first_name, 'First:' %>
+			              <%= f.text_field :first_name %>
+			              <%= f.label :last_name, 'Last:' %>
+			              <%= f.text_field :last_name %>
+			              <%= f.label :gender, 'Sex:' %>			             
+			              <%= f.select :gender, ['Male', 'Female'] %>
+
+			              <%= f.label :email, 'Email:' %>
+			              <%= f.text_field :email %>
+			              <%= f.label :nationality, 'Nationality:' %>
+			              <%= f.text_field :nationality %>
+			              <%= f.label :religion, 'Religion:' %>
+			              <%= f.text_field :religion  %>
+			              <%= f.label :birthdate, 'Birthdate:' %>
+			              <%= f.date_field :birthdate %>
+			              <%= f.label :phone, 'Phone:' %>
+			              <%= f.text_field :phone %>
+	           
+			          
+			           <%= f.label :streetname, 'Street Number & Name:' %>
+		               <%= f.text_field :streetname %>
+		               <%= f.label :city, 'City:' %>
+		               <%= f.text_field :city %>
+		               <%= f.label :state, 'State:' %>
+		               <%= f.text_field :state %>
+		               <%= f.label :zip, 'Zip:' %>
+		               <%= f.text_field :zip %>
+			           <%= f.label :need_ride, 'Do you need help getting to the church building?' %>
+			           <%= f.select :need_ride, ['Yes','No'] %> 
+			           
+			           <%= f.label :has_spouse, 'Marital Status:' %>
+			           <%= f.select :has_spouse, ['married', 'single'] %>
+			           <%= f.label :spouse_name, "If married, spouse's name:" %>
+			           <%= f.text_field :spouse_name %>
+			           <%= f.label :english_level, 'English Level:' %>
+			           <%= f.select :english_level, ['Low', 'Medium Low', 'Medium', 'Medium High', 'High']  %>
+			           <%= f.label :expectations, 'What are your expectations for the program?:' %>
+			           <%= f.text_area :expectations %>
+			           <%= f.label :length_of_stay, 'About how long will you be in Nashville?:' %>
+			           <%= f.select :length_of_stay, ['Less than 1 Year', '1 Year', '1-2 Years', '2-3 Years', '3+ Years'] %>
+			            <%= f.label :exact_length, 'Please tell us exactly how long you plan to be in Nashville:' %>
+			           <%= f.text_area :exact_length %>
+<br>
+<br>
+
+<%= f.submit 'Register' %>
+
+			 
+
+			      
+			        
+
+
+<% end %>
