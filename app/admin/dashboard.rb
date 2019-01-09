@@ -13,6 +13,8 @@ ActiveAdmin.register_page "Dashboard" do
             column("English Level") { |registration| registration.english_level }
             column("Expecations") { |registration| registration.expectations }
             column("Length of Stay") { |registration| registration.length_of_stay }
+            column("Matched?") { |registration| registration.matched }
+
         
           end
         end

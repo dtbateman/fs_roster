@@ -32,7 +32,8 @@ class RegistrationsController < ApplicationController
   private 
   
   def registration_params
-    params.require(:registration).permit(:first_name, :last_name, :gender, :email, :nationality, :religion, :birthdate, :phone, :streetname, :city, :state, :zip, :need_ride, :has_spouse, :spouse_name, :english_level, :expectations, :length_of_stay, :exact_length)
+    params.require(:registration).permit(:first_name, :last_name, :gender, :email, :nationality, :religion, :birthdate, :phone, :streetname, :city, :state, :zip, :need_ride, 
+      :has_spouse, :spouse_name, :english_level, :expectations, :length_of_stay, :exact_length, :volunteer_partner, :matched, :returned_home)
 
   end
 end

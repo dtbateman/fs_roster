@@ -61,6 +61,7 @@
 			           <%= f.select :length_of_stay, ['Less than 1 Year', '1 Year', '1-2 Years', '2-3 Years', '3+ Years'] %>
 			            <%= f.label :exact_length, 'Please tell us exactly how long you plan to be in Nashville:' %>
 			           <%= f.text_area :exact_length %>
+						<%= f.hidden_field :matched %>
 <br>
 <br>
 

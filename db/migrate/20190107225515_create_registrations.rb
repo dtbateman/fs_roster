@@ -21,7 +21,9 @@ class CreateRegistrations < ActiveRecord::Migration[5.0]
 	      t.string :length_of_stay
 	      t.text :exact_length
 	      t.integer :volunteer_partner
-      
+	      t.boolean :matched
+	      
+
       t.timestamps
     end
   end
