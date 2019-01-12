@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  baptism_date: MyText
+  baptism_importance: MyText
+  christian_story: MyText
+  questions: MyText
+
+two:
+  baptism_date: MyText
+  baptism_importance: MyText
+  christian_story: MyText
+  questions: MyText
