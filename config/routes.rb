@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'participants/new'
 
-  get 'participants/creat'
+  get 'participants/create'
 
   get 'participants/edit'
 
@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   get 'participants/show'
 
   get 'participants/index'
+
+get '/signup', to: 'participants#new'
+get '/volunteer', to: 'participants#new2'
+
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

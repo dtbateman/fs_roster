@@ -1,5 +1,11 @@
 class ParticipantsController < ApplicationController
   def new
+    @participant= Participant.new
+  end
+
+  def new2
+    @participant= Participant.new
+
   end
 
   def create

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190112041753) do
+ActiveRecord::Schema.define(version: 20190112200927) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20190112041753) do
     t.string   "role"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "gender"
   end
 
   create_table "student_details", force: :cascade do |t|
@@ -64,15 +65,19 @@ ActiveRecord::Schema.define(version: 20190112041753) do
     t.string   "volunteer_partner"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "person_id_id"
+    t.index ["person_id_id"], name: "index_student_details_on_person_id_id"
   end
 
   create_table "volunteer_details", force: :cascade do |t|
-    t.text     "baptism_date"
+    t.date     "baptism_date"
     t.text     "baptism_importance"
     t.text     "christian_story"
     t.text     "questions"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "person_id_id"
+    t.index ["person_id_id"], name: "index_volunteer_details_on_person_id_id"
   end
 
 end
