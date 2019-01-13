@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+resources :participants
   get 'participants/new'
 
   get 'participants/create'
@@ -10,6 +12,8 @@ Rails.application.routes.draw do
   get 'participants/show'
 
   get 'participants/index'
+  
+  post 'participants/create'
 
 get '/signup', to: 'participants#new'
 get '/volunteer', to: 'participants#new2'

@@ -42,8 +42,7 @@
 						<%= f.text_field :zip %>
 						<%= f.hidden_field :role, :value => 'Volunteer' %>
 
-			 <%= f.fields_for :volunteer_details do |volunteer_detail_field| %>
-						<%= f.label :baptism_date, 'Date of Baptism:' %>
+			 <%= f.fields_for :volunteer_details, @participant.volunteer_details
 						<%= volunteer_detail_field.date_field :baptism_date %>
 						<%= f.label :baptism_importance, 'What role do you feel water immersion/baptism plays in salvation?:' %>
 						<%= volunteer_detail_field.text_area :baptism_importance %>
