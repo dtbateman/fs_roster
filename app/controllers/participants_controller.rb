@@ -32,11 +32,11 @@ class ParticipantsController < ApplicationController
   end
  
  private
-  def participant_params
-    params.require(:participant).permit(:first_name, :last_name, :gender, :email, :birthdate, :phone, :street_name, :city, :state, :zip, :baptism_date, :baptism_importance, :christian_story, :questions, :nationality, :religion, :need_ride, 
-      :has_spouse, :spouse_name, :english_level, :expectations, :length_of_stay, :exact_length, :volunteer_id, :matched, :returned_home)
+    def participant_params
+      params.require(:participant).permit(:first_name, :last_name, :gender, :email, :birthdate, :phone, :street_name, :city, :state, :zip, :baptism_date, :baptism_importance, :christian_story, :questions, :nationality, :religion, :need_ride, 
+        :has_spouse, :spouse_name, :english_level, :expectations, :length_of_stay, :exact_length, :volunteer_id, :matched, :returned_home)
+
+    end
 
   end
-
-end
 end
