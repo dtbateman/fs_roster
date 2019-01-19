@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190112200927) do
+ActiveRecord::Schema.define(version: 20190118222042) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -65,8 +65,12 @@ ActiveRecord::Schema.define(version: 20190112200927) do
     t.string   "volunteer_partner"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.integer  "person_id_id"
-    t.index ["person_id_id"], name: "index_student_details_on_person_id_id"
+    t.integer  "participant_id"
+    t.boolean  "returned_home"
+    t.string   "has_spouse"
+    t.string   "spouse_name"
+    t.text     "exact_length"
+    t.index ["participant_id"], name: "index_student_details_on_participant_id"
   end
 
   create_table "volunteer_details", force: :cascade do |t|
@@ -76,8 +80,8 @@ ActiveRecord::Schema.define(version: 20190112200927) do
     t.text     "questions"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.integer  "person_id_id"
-    t.index ["person_id_id"], name: "index_volunteer_details_on_person_id_id"
+    t.integer  "participant_id"
+    t.index ["participant_id"], name: "index_volunteer_details_on_participant_id"
   end
 
 end

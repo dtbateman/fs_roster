@@ -27,6 +27,8 @@
 						<%= f.select :gender, ['Male', 'Female'] %>
 						<br>
 						<br>
+						<%= f.label :birthdate, 'Birthdate:' %>
+						<%= f.date_field :birthdate %>
 						<%= f.label :email, 'Email:' %>
 						<%= f.text_field :email %>
 						<%= f.label :phone, 'Phone:' %>
@@ -41,30 +43,29 @@
 						<%= f.label :zip, 'Zip:' %>
 						<%= f.text_field :zip %>
 						<%= f.hidden_field :role, :value => 'Reader' %>
-			 <%= f.fields_for @participant.student_details do |student_detail_field| %>
-						<%= f.label :nationality, 'Nationality:' %>
+			 <%= f.fields_for @participant.student_detail do |student_detail_field| %>
+						<%= student_detail_field.label :nationality, 'Nationality:' %>	
 						<%= student_detail_field.text_field :nationality %>
-						<%= f.label :religion, 'Religion:' %>
+						<%= student_detail_field.label :religion, 'Religion:' %>
 						<%= student_detail_field.text_field  :religion  %>
-						<%= f.label :birthdate, 'Birthdate:' %>
-						<%= student_detail_field.date_field :birthdate %>
-						<%= f.label :need_ride, 'Do you need help getting to the church building?' %>
+						
+						<%= student_detail_field.label :need_ride, 'Do you need help getting to the church building?' %>
 						<%= student_detail_field.select :need_ride, ['Yes','No'] %> 
 						<br>
 						<br>
-						<%= f.label :has_spouse, 'Marital Status:' %>
+						<%= student_detail_field.label :has_spouse, 'Marital Status:' %>
 						<%= student_detail_field.select :has_spouse, ['married', 'single'] %>
 						<br>
 						<br>
-						<%= f.label :spouse_name, "If married, spouse's name:" %>
+						<%= student_detail_field.label :spouse_name, "If married, spouse's name:" %>
 						<%= student_detail_field.text_field  :spouse_name %>
-						<%= f.label :english_level, 'English Level:' %>
+						<%= student_detail_field.label :english_level, 'English Level:' %>
 						<%= student_detail_field.select :english_level, ['Low', 'Medium Low', 'Medium', 'Medium High', 'High']  %>
-						<%= f.label :expectations, 'What are your expectations for the program?:' %>
-						<%= student_detail_field.text_area :expectations %>
-						<%= f.label :length_of_stay, 'About how long will you be in Nashville?:' %>
+						<%= student_detail_field.label :expectation, 'What are your expectations for the program?:' %>
+						<%= student_detail_field.text_area :expectation %>
+						<%= student_detail_field.label :length_of_stay, 'About how long will you be in Nashville?:' %>
 						<%= student_detail_field.select :length_of_stay, ['Less than 1 Year', '1 Year', '1-2 Years', '2-3 Years', '3+ Years'] %>
-						<%= f.label :exact_length, 'Please tell us exactly how long you plan to be in Nashville:' %>
+						<%= student_detail_field.label :exact_length, 'Please tell us exactly how long you plan to be in Nashville:' %>
 						<%= student_detail_field.text_area :exact_length %>
 			<% end %>
 						

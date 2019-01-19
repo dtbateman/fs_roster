@@ -1,5 +1,29 @@
 Rails.application.routes.draw do
   
+  get 'student_details/new'
+
+  get 'student_details/create'
+
+  get 'student_details/edit'
+
+  get 'student_details/update'
+
+  get 'student_details/show'
+
+  get 'student_details/index'
+
+  get 'volunteer_details/new'
+
+  get 'volunteer_details/create'
+
+  get 'volunteer_details/edit'
+
+  get 'volunteer_details/update'
+
+  get 'volunteer_details/show'
+
+  get 'volunteer_details/index'
+
 resources :participants
   get 'participants/new'
 

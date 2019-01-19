@@ -2,8 +2,7 @@ ActiveAdmin.register VolunteerDetail do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-# permit_params :list, :of, :attributes, :on, :model
-#
+permit_params :baptism_date, :baptism_importance, :christian_story, :questions, :participant_id, :participant_id_id
 # or
 #
 # permit_params do
