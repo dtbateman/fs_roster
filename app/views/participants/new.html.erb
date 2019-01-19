@@ -42,7 +42,10 @@
 						<%= f.text_field :state %>
 						<%= f.label :zip, 'Zip:' %>
 						<%= f.text_field :zip %>
-						<%= f.hidden_field :role, :value => 'Reader' %>
+						<%= f.hidden_field :role, :value => 'Reader', readonly: true%>
+						<br>
+						<br>
+
 			 <%= f.fields_for @participant.student_detail do |student_detail_field| %>
 						<%= student_detail_field.label :nationality, 'Nationality:' %>	
 						<%= student_detail_field.text_field :nationality %>

@@ -40,17 +40,20 @@
 						<%= f.text_field :state %>
 						<%= f.label :zip, 'Zip:' %>
 						<%= f.text_field :zip %>
-						<%= f.hidden_field :role, :value => 'Volunteer' %>
+                        <%= f.hidden_field :role, :value => 'Volunteer', readonly: true%>
+						<br>
+						<br>
 
-			 <%= f.fields_for :volunteer_details, @participant.volunteer_details
-						<%= volunteer_detail_field.date_field :baptism_date %>
-						<%= f.label :baptism_importance, 'What role do you feel water immersion/baptism plays in salvation?:' %>
+			 <%= f.fields_for @participant.volunteer_detail do |volunteer_detail_field| %>
+					    <%= volunteer_detail_field.label :baptism_date, 'Date of Baptism:' %>
+ 						<%= volunteer_detail_field.date_field :baptism_date %>
+						<%= volunteer_detail_field.label :baptism_importance, 'What role do you feel water immersion/baptism plays in salvation?:' %>
 						<%= volunteer_detail_field.text_area :baptism_importance %>
 						<br>
 						<br>
-						<%= f.label :christian_story, 'Aside from being raised in a Christian home, describe how and why you became a Christian:' %>
+						<%= volunteer_detail_field.label :christian_story, 'Aside from being raised in a Christian home, describe how and why you became a Christian:' %>
 						<%= volunteer_detail_field.text_area:christian_story %>
-						<%= f.label :questions, 'Notes(questions, concerns, comments):' %>
+						<%= volunteer_detail_field.label :questions, 'Notes(questions, concerns, comments):' %>
 						<%= volunteer_detail_field.text_area :questions %>
 			<% end %>
 						
