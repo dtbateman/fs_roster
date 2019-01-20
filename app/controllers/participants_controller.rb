@@ -21,9 +21,15 @@
                 flash[:success] = "Successfully Registered!"        
 
                 #email notifes admin of new registration
-                NotifyMailer.notify_email(@participant).deliver_later
+                NotifyMailer.notify_email(@participant).deliver_now
 
-                redirect_to '/signup'
+                redirect_to '/friendspeak'
+
+                    else
+                        flash[:success] = "Sorry, your registration was not completed!" 
+
+                redirect_to '/friendspeak'
+
                 end
                 end
 

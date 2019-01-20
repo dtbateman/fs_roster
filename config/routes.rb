@@ -42,6 +42,8 @@ resources :participants
 get '/signup', to: 'participants#new'
 get '/volunteer', to: 'participants#new2'
 
+get '/friendspeak', to: 'participants#index'
+
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

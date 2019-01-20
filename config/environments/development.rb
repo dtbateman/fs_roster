@@ -41,7 +41,7 @@ config.action_mailer.smtp_settings = { :address => "localhost", :port => 3000 }
     :port => "587",
     :domain => "gmail.com",
     :user_name => 'hillsborofriendspeak@gmail.com', 
-    :password => 'xxxxxxxxxxxxxxxx',
+    :password => 'jxiytntyjdirxkqj',
     :authentication => "plain",
     :enable_starttls_auto => true
   } 

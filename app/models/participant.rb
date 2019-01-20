@@ -6,8 +6,8 @@ class Participant < ApplicationRecord
 		  accepts_nested_attributes_for :student_detail,   :allow_destroy => :true
 
 
-		# validates :last_name, presence: true
-		# # validates :gender, inclusion: { in: %w(male female) }
-		# validates :phone, presence: true
+		validates :last_name, presence: true
+		# validates :gender, inclusion: { in: %w(male female) }
+		validates :phone, presence: true
 		
 end
