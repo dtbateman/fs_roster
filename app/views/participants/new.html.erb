@@ -46,7 +46,7 @@
 						<br>
 						<br>
 
-			 <%= f.fields_for @participant.student_detail do |student_detail_field| %>
+			 <%= f.fields_for :student_detail, @participant.student_detail do |student_detail_field| %>
 						<%= student_detail_field.label :nationality, 'Nationality:' %>	
 						<%= student_detail_field.text_field :nationality %>
 						<%= student_detail_field.label :religion, 'Religion:' %>

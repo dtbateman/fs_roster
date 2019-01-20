@@ -11,10 +11,13 @@
                 end
 
                 def create
-                @participant = Participant.create(participant_params)
+                @participant = Participant.new(participant_params)
                 @participant.save
+                # @participant.student_detail.update_attributes
 
                 if @participant.save
+                    puts params.inspect
+            
                 flash[:success] = "Successfully Registered!"        
 
                 #email notifes admin of new registration
@@ -39,7 +42,9 @@
                 private
                 def participant_params
                 params.require(:participant).permit(:first_name, :last_name, :gender, :email, :birthdate, :phone, 
-                  :street_name, :city, :state, :zip, :role, student_detail_attributes: [:nationality, :religion, :need_ride, 
+                  :street_name, :city, :state, :zip, :role, :nationality, :religion, :need_ride, 
+                :has_spouse, :spouse_name, :english_level, :expectation, :length_of_stay, :exact_length, :volunteer_id, 
+                :matched, :returned_home, student_detail_attributes: [:nationality, :religion, :need_ride, 
                 :has_spouse, :spouse_name, :english_level, :expectation, :length_of_stay, :exact_length, :volunteer_id, 
                 :matched, :returned_home, :participant_id], volunteer_detail_attributes: [:baptism_date, :baptism_importance, :christian_story, :questions, :participant_id])
 

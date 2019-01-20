@@ -44,7 +44,7 @@
 						<br>
 						<br>
 
-			 <%= f.fields_for @participant.volunteer_detail do |volunteer_detail_field| %>
+			 <%= f.fields_for :volunteer_detail, @participant.volunteer_detail do |volunteer_detail_field| %>
 					    <%= volunteer_detail_field.label :baptism_date, 'Date of Baptism:' %>
  						<%= volunteer_detail_field.date_field :baptism_date %>
 						<%= volunteer_detail_field.label :baptism_importance, 'What role do you feel water immersion/baptism plays in salvation?:' %>
