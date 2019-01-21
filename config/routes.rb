@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
   
+  get 'assignments/new'
+
+  get 'assignments/create'
+
+  get 'assignments/edit'
+
+  get 'assignments/update'
+
+  get 'assignments/show'
+
+  get 'assignments/index'
+
   get 'student_details/new'
 
   get 'student_details/create'

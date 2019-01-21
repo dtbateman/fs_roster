@@ -5,9 +5,12 @@ class Participant < ApplicationRecord
 		has_one :student_detail, :dependent => :destroy, inverse_of: :participant
 		  accepts_nested_attributes_for :student_detail,   :allow_destroy => :true
 
+# has_and_belongs_to_many :assignments
+
 
 		validates :last_name, presence: true
 		# validates :gender, inclusion: { in: %w(male female) }
 		validates :phone, presence: true
+
 		
 end
