@@ -1,8 +1,15 @@
-ActiveAdmin.register Assignment do
+ActiveAdmin.register Group do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :group_description, :number_of_pariticpants, :participant_id#
+permit_params :description , participant_ids: []
+  form do |f|		
+    f.inputs 'Group Details' do
+      f.input :description
+      f.input :participant_ids, as: :check_boxes, collection: Participant.pluck(:last_name, :first_name )
+     end
+  end
+#
 # or
 #
 # permit_params do

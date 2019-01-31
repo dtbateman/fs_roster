@@ -45,7 +45,7 @@ resources :participants
 
   get 'participants/update'
 
-  get 'participants/show'
+  get 'participants/show', to: 'participants#show'
 
   get 'participants/index'
   

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190121202558) do
+ActiveRecord::Schema.define(version: 20190123040821) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -38,13 +38,19 @@ ActiveRecord::Schema.define(version: 20190121202558) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "assignments", force: :cascade do |t|
-    t.string   "group_description"
-    t.string   "number_of_participants"
-    t.string   "participant_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.index ["participant_id"], name: "index_assignments_on_participant_id"
+  create_table "groups", force: :cascade do |t|
+    t.string   "description"
+    t.integer  "participant_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["participant_id"], name: "index_groups_on_participant_id"
+  end
+
+  create_table "matchups", id: false, force: :cascade do |t|
+    t.integer "group_id",       null: false
+    t.integer "participant_id", null: false
+    t.index ["group_id", "participant_id"], name: "index_matchups_on_group_id_and_participant_id"
+    t.index ["participant_id", "group_id"], name: "index_matchups_on_participant_id_and_group_id"
   end
 
   create_table "participants", force: :cascade do |t|

@@ -40,6 +40,12 @@
                 end
 
                 def show
+                    # @participant = Participant.find(params[:id])
+                    # # from your activeadmin it shows has_many relation
+                    # @student_details   = @participant.student_details
+                    # @volunteer_details = @participant.volunteer_details
+                    # # through has_many_and_belongs_to that you mentioned above
+                    # @groups = @participant.groups 
                 end
 
                 def index
