@@ -3,10 +3,12 @@ ActiveAdmin.register Group do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
 permit_params :description , participant_ids: []
+
   form do |f|		
     f.inputs 'Group Details' do
       f.input :description
-      f.input :participant_ids, as: :check_boxes, collection: Participant.pluck(:last_name, :first_name )
+      f.input :participant, as: :check_boxes, collection: Participant.pluck_all(:first_name, :last_name, :gender, :role, :id)
+      f.submit
      end
   end
 #

@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 20190123040821) do
     t.datetime "updated_at",        null: false
     t.integer  "participant_id"
     t.boolean  "returned_home"
-    t.string   "has_spouse"
+    t.boolean  "has_spouse"
     t.string   "spouse_name"
     t.text     "exact_length"
     t.index ["participant_id"], name: "index_student_details_on_participant_id"

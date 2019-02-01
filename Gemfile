@@ -34,6 +34,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#adds pluck_all functionality
+gem 'pluck_all', '~> 1.2', '>= 1.2.4'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

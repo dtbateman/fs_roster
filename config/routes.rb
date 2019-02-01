@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
   
+  get 'groups/new'
+
+  get 'groups/create'
+
+  get 'groups/edit'
+
+  get 'groups/update'
+
+  get 'groups/show'
+
+  get 'groups/index'
+
   get 'assignments/new'
 
   get 'assignments/create'
