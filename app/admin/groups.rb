@@ -11,6 +11,23 @@ permit_params :description , participant_ids: []
       f.submit
      end
   end
+
+
+  index do
+  selectable_column
+column :id
+column :participants do |m|
+	if m.matchup.participant_id.present?
+		            status_tag('YES!')
+
+	else
+		            status_tag('None')
+end
+
+end
+actions
+
+end
 #
 # or
 #
