@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190123040821) do
+ActiveRecord::Schema.define(version: 20190203195107) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -40,10 +40,8 @@ ActiveRecord::Schema.define(version: 20190123040821) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "description"
-    t.integer  "participant_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["participant_id"], name: "index_groups_on_participant_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "matchups", id: false, force: :cascade do |t|

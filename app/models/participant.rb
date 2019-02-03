@@ -12,5 +12,12 @@ class Participant < ApplicationRecord
 		# validates :gender, inclusion: { in: %w(male female) }
 		validates :phone, presence: true
 
-		
+#adds :full_name to Participant model
+  def full_name
+    name = first_name + ' '
+    name += last_name
+    name
+  end	
+
+
 end

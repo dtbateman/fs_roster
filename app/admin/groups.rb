@@ -7,7 +7,7 @@ permit_params :description , participant_ids: []
   form do |f|		
     f.inputs 'Group Details' do
       f.input :description
-      f.input :participant, as: :check_boxes, collection: Participant.pluck_all(:first_name, :last_name, :gender, :role, :id)
+      f.input :participants, as: :check_boxes, collection: Participant.pluck(:first_name, :id)
       f.submit
      end
   end
@@ -15,16 +15,25 @@ permit_params :description , participant_ids: []
 
   index do
   selectable_column
-column :id
-column :participants do |m|
-	if m.matchup.participant_id.present?
-		            status_tag('YES!')
-
-	else
-		            status_tag('None')
+	column :id
+	column :description
+	column :members do |m|
+		if m.participants.present?
+			m.participants.map(&:first_name)
+		else
+			status_tag "None"
+	end
 end
 
-end
+# column :participants do |m|
+# 	if m.matchup.participant_id.present?
+# 		            status_tag('YES!')
+
+# 	else
+# 		            status_tag('None')
+# end
+
+# end
 actions
 
 end

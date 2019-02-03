@@ -32,8 +32,8 @@ link_to "Details", controller: "admin/volunteer_details", id: m.volunteer_detail
     
 end
 column :group do |m|
-        if m.group.present?
-            link_to m.group.description
+        if m.groups.present?
+			m.groups.map(&:description)
         else
             status_tag('None')
         end
