@@ -19,7 +19,7 @@ permit_params :description , participant_ids: []
 	column :description
 	column :members do |m|
 		if m.participants.present?
-			m.participants.map(&:first_name)
+			m.participants.map{|f| "#{f.first_name} #{f.last_name}"}
 		else
 			status_tag "None"
 	end
