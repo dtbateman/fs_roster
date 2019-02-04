@@ -7,7 +7,7 @@ permit_params :description , participant_ids: []
   form do |f|		
     f.inputs 'Group Details' do
       f.input :description
-      f.input :participants, as: :check_boxes, collection: Participant.select(:id, :first_name, :last_name).all.map{|u| [u.full_name, u.id] }
+      f.input :participants, as: :check_boxes, collection: Participant.select(:id, :first_name, :last_name, :gender, :role).all.map{|u| [u.admin_att, u.id] }
       f.submit
      end
   end

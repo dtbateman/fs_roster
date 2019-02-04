@@ -23,5 +23,13 @@ class Participant < ApplicationRecord
     self.last_name = split.last
   end
 
+  def admin_att
+  [first_name, last_name].join(' ') + '- ' + gender + ' ' +role
+  
+  
+  
+end
+
+
 
 end
