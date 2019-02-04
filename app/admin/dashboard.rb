@@ -10,6 +10,13 @@ ActiveAdmin.register_page "Dashboard" do
             column("Phone") { |participant| participant.phone }
             column("Birthday") { |participant| participant.birthdate }
             column("Role") { |participant| participant.role }
+            column ("Matched") do |m|
+            if m.student_detail.present?
+            m.student_detail.matched
+            else
+            status_tag "N/A"
+            end
+            end
                    
           end
         end

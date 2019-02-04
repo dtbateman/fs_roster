@@ -14,10 +14,14 @@ class Participant < ApplicationRecord
 
 #adds :full_name to Participant model
   def full_name
-    name = first_name + ' '
-    name += last_name
-    name
-  end	
+    [first_name, last_name].join(' ')
+  end
+
+  def full_name=(name)
+    split = name.split(' ', 2)
+    self.first_name = split.first
+    self.last_name = split.last
+  end
 
 
 end

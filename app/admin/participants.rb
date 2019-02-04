@@ -2,7 +2,7 @@ ActiveAdmin.register Participant do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :id, :first_name, :gender, :email, :birthdate, :phone, 
+permit_params :id, :first_name, :last_name, :full_name, :gender, :email, :birthdate, :phone, 
                   :street_name, :city, :state, :zip, :role, group_attributes: [:description], student_details_attributes: [:nationality, :religion, :need_ride, 
                 :has_spouse, :spouse_name, :english_level, :expectation, :length_of_stay, :exact_length, :volunteer_id, 
                 :matched, :returned_home, :participant_id], volunteer_details_attributes: [:baptism_date, :baptism_importance, :christian_story, :questions, :participant_id]
@@ -23,9 +23,11 @@ column :zip
 column :role
 column :details do |m|
         if m.student_detail.present?
-link_to "Details", controller: "admin/student_details", id: m.student_detail.id 
+       	@studentdetail= m.student_detail.id
+link_to "Details", admin_student_detail_path(@studentdetail)
 		elsif m.volunteer_detail.present?
-link_to "Details", controller: "admin/volunteer_details", id: m.volunteer_detail.id 
+       	@volunteerdetail= m.volunteer_detail.id
+link_to "Details", admin_volunteer_detail_path(@volunteerdetail)
         else
             status_tag('Error')
         end

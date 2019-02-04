@@ -53,7 +53,7 @@
 
                 private
                 def participant_params
-                params.require(:participant).permit(:first_name, :last_name, :gender, :email, :birthdate, :phone, 
+                params.require(:participant).permit(:first_name, :last_name, :full_name, :gender, :email, :birthdate, :phone, 
                   :street_name, :city, :state, :zip, :role, :nationality, :religion, :need_ride, 
                 :has_spouse, :spouse_name, :english_level, :expectation, :length_of_stay, :exact_length, :volunteer_id, 
                 :matched, :returned_home, student_detail_attributes: [:nationality, :religion, :need_ride, 
