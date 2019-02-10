@@ -7,6 +7,9 @@ permit_params :id, :first_name, :last_name, :full_name, :gender, :email, :birthd
                 :has_spouse, :spouse_name, :english_level, :expectation, :length_of_stay, :exact_length, :volunteer_id, 
                 :matched, :returned_home, :participant_id], volunteer_details_attributes: [:baptism_date, :baptism_importance, :christian_story, :questions, :participant_id]
 
+action_item :go_back, only: :show do
+  link_to 'Back to Participants', admin_participants_path
+end
 index do
   selectable_column
 column :id
@@ -45,6 +48,51 @@ column :updated_at
 actions
 
 end
+
+
+show do
+
+    attributes_table do
+      row :id
+      row :first_name
+      row :last_name
+      row :gender
+      row :email
+      row :birthdate
+      row :phone
+      row :street_name
+      row :city  
+      row :state
+      row :zip
+      row :role
+      row :details do |m|
+      if m.student_detail.present?
+      @studentdetail= m.student_detail.id
+      link_to "Details", admin_student_detail_path(@studentdetail)
+      elsif m.volunteer_detail.present?
+      @volunteerdetail= m.volunteer_detail.id
+      link_to "Details", admin_volunteer_detail_path(@volunteerdetail)
+      else
+      status_tag('Error')
+      end
+
+      end
+      row :group do |m|
+      if m.groups.present?
+      m.groups.map(&:description)
+      else
+      status_tag('None')
+      end
+      end
+      row :created_at
+      row :updated_at
+  end
+
+
+    active_admin_comments
+  end
+
+
 # or
 
 # #
