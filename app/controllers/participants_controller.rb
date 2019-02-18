@@ -21,7 +21,7 @@
                 flash[:success] = "Successfully Registered!"        
 
                 #email notifes admin of new registration
-                NotifyMailer.notify_email(@participant).deliver_now
+                NotifyMailer.notify_email(@participant).deliver_later
 
                 redirect_to '/friendspeak'
 

@@ -26,9 +26,6 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
-
   config.action_mailer.perform_caching = false
   
  config.action_mailer.raise_delivery_errors = true
@@ -37,12 +34,12 @@ Rails.application.configure do
 config.action_mailer.smtp_settings = { :address => "localhost", :port => 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address => "smtp.gmail.com",
+    :address => "smtp.us.exg7.exghost.com",
     :port => "587",
-    :domain => "gmail.com",
-    :user_name => 'hillsborofriendspeak@gmail.com', 
-    :password => 'jxiytntyjdirxkqj',
-    :authentication => "plain",
+    :domain => "hillsboro.org",
+    :user_name => 'friendspeak@hillsboro.org', 
+    :password => 'Hcoc0014',
+    :authentication => "login",
     :enable_starttls_auto => true
   } 
 
@@ -66,4 +63,8 @@ config.action_mailer.smtp_settings = { :address => "localhost", :port => 3000 }
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+#change time zone to Nashville local time
+config.time_zone = "Central Time (US & Canada)"
+config.active_record.default_timezone = :local
 end
